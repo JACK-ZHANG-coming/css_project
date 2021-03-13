@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css浮动</title>
+        <style>
+            div.main{
+                width: 1000px;
+                height: 500px;
+                background-color: aquamarine;
+            }
+            /*浮动的元素 脱离文档流 空间释放
+              （原来是占用着这个位置的，然后浮动
+              就漂浮起来了，这个位置就不占用了
+              ）
+            */
+            div.child{
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+                float: left;
+                margin: 5px;
+            }
+            /*因为前面是浮动的，如果没有
+              clear：both这个属性，就会变成这样，
+              （可以去掉试试）
+              因为他是浮起来的嘛，这个位置就是空的，
+              而clear：both会清除浮动，默认为正常的
+              文档流。
+            */
+            div.clear{
+                height: 20px;
+                border: 2px solid black;
+                clear: both;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 浮动 -->
+        <div class="main">
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="clear"></div>
+        </div>
+    </body>
+</html>
