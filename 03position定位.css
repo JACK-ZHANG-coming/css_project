@@ -1,0 +1,87 @@
+/* 关于static的几种定位：static、fixed、relative、absolute、sticky */
+
+div.static {
+    /* static定位 ：即 浏览器的默认的，写不写没啥区别，top、right、left、bottom不起作用*/
+    position: static;
+    border: 3px solid #73AD21;
+    top: 50px;
+    /*演示：这句话不起作用，可删去*/
+    left: 10px;
+    /*演示：这句话不起作用，可删去*/
+}
+
+div.fixed_1 {
+    /*  fixed定位：元素的位置相对于浏览器（就是你能看到的这个浏览器窗口）来说，
+        是固定的，无论你怎么滑动窗口，它都在那儿雷打不动。 
+        可以与其他元素重叠。（常用于导航栏）
+    */
+    position: fixed;
+    border: 3px solid #111111;
+    width: 200px;
+    height: 60px;
+    top: 300px;
+    left: 50px;
+}
+
+div.fixed_2 {
+    position: fixed;
+    border: 3px solid #44f895;
+    width: 200px;
+    height: 60px;
+    top: 300px;
+    left: 260px;
+}
+
+div.fixed_3 {
+    position: fixed;
+    border: 3px solid #7a5e5e;
+    background-color: #ebaaaa;
+    width: 200px;
+    height: 60px;
+    top: 310px;
+    left: 360px;
+}
+
+div.relative {
+    /*  relative相对定位：相对于这个元素的原来位置进行移动，原来的位置依然是存在的。
+        通常里面会包上absolute绝对定位来用
+     */
+    position: relative;
+    border: 3px solid #9cf0c2;
+    width: 200px;
+    height: 60px;
+    /* top: 200px; */
+}
+
+div.absolute {
+    /*  absolute绝对定位：根据外面一层包着的元素来定位，左啊还是右啊，
+        如果外面没有那就是html元素，最大的那个咯。 
+    */
+    position: absolute;
+    background-color: #9cf0c2;
+    border: #29c9c9;
+    width: 150px;
+    height: 30px;
+    top: 20px;
+}
+
+div.sticky {
+    /*和flex定位有些相似，但是又有些不同
+      sticky是粘的意思，一开始可以自由滑动，当到一定位置时就会在那里不动。
+      先自由滑动，到一定位置就固定在那里不动。
+    */
+    /* 对于Safari浏览器 */
+    position: -webkit-sticky;
+    position: sticky;
+    /* 到顶部20px位置不动 */
+    top: 20px;
+    /* margin-top: 500px; */
+    background-color: #29c9c9;
+    border: 2px solid #73AD21;
+
+}
+
+/* 对于以上元素有所重叠的，
+   可以设置z-index属性设置优先级
+   z-index:-1;//或者1...啥啥的。
+*/

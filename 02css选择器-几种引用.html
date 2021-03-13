@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>css选择器及几种引用</title>
+    <!-- 
+        id选择器 (只能引用一次，给特定的id引用)
+        写法：#test1{color:red;}
+        引用： id=“test1”
+
+
+        class选择器（多次引用，多种写法）
+        写法1：.test2{color:blue;} //第一种写法，正常用
+        引用：class=“test2”
+        写法2：div.test3{color:black} //只有div元素引用时起效果
+        引用：class=“test3”
+        写法3：test4.div{color:#123456} //test4样式包含的所有div起效果
+        引用：class=“test4”
+        写法4：span{color:#666666;} //所有span元素起效果
+     -->
+
+     <!-- 
+        css外部引用
+            <link rel="stylesheet" type="text/css" href="mystyle.css">
+            "mystyle.css"为css样式文件的路径，前两个不变原样写
+        css内部引用
+            <head>
+            <style>
+            .test1{color:red;}//这里面就正常写
+            </style>
+            </head>
+        css内联引用
+            <p style="color:sienna;margin-left:20px">这是一个段落。</p>
+
+        多重样式混合引用时，优先级：
+            内联引用>内部引用>外部引用
+      -->
+      <link rel="stylesheet" type="text/css" href="02css选择器-几种引用.css">
+      <style>
+          .test2{color: blue;}
+          div.test3{color: black;}
+          .test4 div{color: #00fa92;}
+          p {color: #f115af;}
+      </style>
+</head>
+
+<body>
+    <div id="test1">test1来自外部引用</div>
+    <div class="test2">test2来自内部引用</div>
+    <div class="test3">test3来自内部引用</div>
+    <div class="test4">
+        <div>test4来自内部引用</div>
+        <div>test4来自内部引用</div>
+    </div>
+    <p>所有p元素遵循这个样式</p>
+    <p style="margin-top: 5px;">所有p元素遵循这个样式，并且这个使用了内联样式</p>
+    
+</body>
+
+</html>
